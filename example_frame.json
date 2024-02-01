@@ -1,0 +1,4228 @@
+{
+  "payloadType": "frame",
+  "payload": {
+    "gameTime": 601,
+    "localScale": 3.0,
+    "multiplayerTimeOffset": 0,
+    "restStop": 659,
+    "paused": false,
+    "truck": {
+      "config": {
+        "brandId": "scania",
+        "brand": "Scania",
+        "id": "vehicle.scania.s_2016",
+        "name": "S",
+        "fuelCapacity": 1290.0,
+        "fuelWarningFactor": 0.15000000596046448,
+        "adblueCapacity": 105.0,
+        "adblueWarningFactor": 0.15000000596046448,
+        "airPressureWarning": 69.5999984741211,
+        "airPressureEmergency": 34.79999923706055,
+        "oilPressureWarning": 10.149999618530273,
+        "waterTemperatureWarning": 105.0,
+        "batteryVoltageWarning": 23.760000228881836,
+        "rpmLimit": 2500.0,
+        "forwardGearCount": 12,
+        "reverseGearCount": 2,
+        "retarderStepCount": 5,
+        "cabinPosition": {
+          "x": 0.0,
+          "y": 1.2947975397109985,
+          "z": -2.2461023330688477
+        },
+        "hookPosition": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 1.42624032497406
+        },
+        "headPosition": {
+          "x": -0.6832099556922913,
+          "y": 1.4106093645095825,
+          "z": 0.38374221324920654
+        },
+        "licensePlate": "CDX-490",
+        "licensePlateCountry": "Finland",
+        "licensePlateCountryId": "finland",
+        "wheelCount": 4,
+        "shifterType": "arcade"
+      },
+      "worldPlacement": {
+        "position": {
+          "x": 47322.78910827637,
+          "y": 19.28099822998047,
+          "z": -56602.860290527344
+        },
+        "orientation": {
+          "heading": 183.42962646484375,
+          "pitch": -0.0706651359796524,
+          "roll": 0.054887399077415466
+        }
+      },
+      "localLinearVelocity": {
+        "x": 0.00015106706996448338,
+        "y": -0.000143635697895661,
+        "z": -0.0000754435095586814
+      },
+      "localAngularVelocity": {
+        "x": -0.00011176277621416375,
+        "y": 0.0000021091598227940267,
+        "z": 0.00013460448826663196
+      },
+      "localLinearAcceleration": {
+        "x": 0.00006134528666734695,
+        "y": 0.00003867182385874912,
+        "z": 0.00010824448690982535
+      },
+      "localAngularAcceleration": {
+        "x": -0.000033762746170395985,
+        "y": -0.000010313147868146189,
+        "z": -0.00006535695138154551
+      },
+      "cabin": {
+        "offset": {
+          "position": {
+            "x": -0.0002390158479101956,
+            "y": -0.000016927719116210938,
+            "z": 0.004666805267333984
+          },
+          "orientation": {
+            "heading": 359.9969177246094,
+            "pitch": -0.0013933584559708834,
+            "roll": 0.0012704151449725032
+          }
+        },
+        "angularAcceleration": {
+          "x": 0.0013547465205192566,
+          "y": -0.000009819527804211248,
+          "z": -0.0005731667624786496
+        },
+        "angularVelocity": {
+          "x": 0.0002504712319932878,
+          "y": 0.00002937705176009331,
+          "z": -0.00032159584225155413
+        }
+      },
+      "headOffset": {
+        "position": {
+          "x": 0.0,
+          "y": 0.009999999776482582,
+          "z": 0.029999999329447746
+        },
+        "orientation": {
+          "heading": 0.0,
+          "pitch": -9.000003814697266,
+          "roll": 0.0
+        }
+      },
+      "speed": 0.01491436269134283,
+      "engine": {
+        "rpm": 0.0,
+        "gear": 0,
+        "enabled": false
+      },
+      "displayedGear": 0,
+      "input": {
+        "brake": 0.0,
+        "throttle": 0.0,
+        "clutch": 0.0,
+        "steering": 0.0
+      },
+      "effective": {
+        "brake": 1.0,
+        "throttle": 0.0,
+        "clutch": 0.0,
+        "steering": 0.0
+      },
+      "cruiseControl": 0.0,
+      "brake": {
+        "retarder": 0,
+        "parking": false,
+        "motor": false,
+        "airPressure": 124.40999603271484,
+        "airPressureWarning": false,
+        "airPressureEmergency": false,
+        "temperature": 28.284210205078125
+      },
+      "fuel": {
+        "amount": 1289.5076904296875,
+        "range": 2619.3125,
+        "averageConsumption": 1.2525734901428223,
+        "warning": false
+      },
+      "adblue": {
+        "amount": 104.970458984375,
+        "averageConsumption": 0.0,
+        "warning": false
+      },
+      "oil": {
+        "pressure": 0.0,
+        "temperature": 28.182722091674805,
+        "pressureWarning": true
+      },
+      "waterTemperature": 28.182405471801758,
+      "waterTemperatureWarning": false,
+      "batteryVoltage": 27.479995727539062,
+      "batteryVoltageWarning": true,
+      "electricEnabled": false,
+      "leftBlinker": false,
+      "rightBlinker": false,
+      "hazardWarning": false,
+      "differentialLock": false,
+      "light": {
+        "leftBlinker": false,
+        "rightBlinker": false,
+        "parking": false,
+        "lowBeam": false,
+        "highBeam": false,
+        "auxFront": 0,
+        "auxRoof": 0,
+        "beacon": false,
+        "brake": false,
+        "reverse": false
+      },
+      "wipers": false,
+      "dashboardBacklight": 1.0,
+      "liftAxle": false,
+      "liftAxleIndicator": false,
+      "trailerLiftAxle": false,
+      "trailerLiftAxleIndicator": false,
+      "wheels": [
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": true,
+          "rotation": 0.0003441968001425266,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0029394866432994604,
+          "velocity": 0.00005569454879150726,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": -1.0449999570846558,
+              "y": 0.5,
+              "z": -1.6399999856948853
+            },
+            "isPowered": false,
+            "radius": 0.5059999823570251,
+            "isSimulated": true,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": true,
+          "rotation": 0.944799542427063,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0023983956780284643,
+          "velocity": 0.00006380585546139628,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 1.0449999570846558,
+              "y": 0.5,
+              "z": -1.6399999856948853
+            },
+            "isPowered": false,
+            "radius": 0.5059999823570251,
+            "isSimulated": true,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": true,
+          "rotation": 0.889241635799408,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": -0.0036589002702385187,
+          "velocity": 0.00006125685467850417,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": -0.9300000071525574,
+              "y": 0.5,
+              "z": 2.094278573989868
+            },
+            "isPowered": true,
+            "radius": 0.5059999823570251,
+            "isSimulated": true,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": true,
+          "rotation": 0.8337914347648621,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": -0.003604087745770812,
+          "velocity": 0.00009544738713884726,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.9300000071525574,
+              "y": 0.5,
+              "z": 2.094278573989868
+            },
+            "isPowered": true,
+            "radius": 0.5059999823570251,
+            "isSimulated": true,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        },
+        {
+          "lift": 0.0,
+          "liftOffset": 0.0,
+          "isOnGround": false,
+          "rotation": 0.0,
+          "steering": 0.0,
+          "substance": 0,
+          "suspensionDeflection": 0.0,
+          "velocity": 0.0,
+          "config": {
+            "isLiftable": false,
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "isPowered": false,
+            "radius": 0.0,
+            "isSimulated": false,
+            "isSteerable": false
+          }
+        }
+      ],
+      "wear": {
+        "engine": 0.0,
+        "transmission": 0.0,
+        "cabin": 0.0,
+        "chassis": 0.0,
+        "wheels": 0.0
+      },
+      "odometer": 0.3061813712120056,
+      "navigation": {
+        "distance": 68638.765625,
+        "time": 3740.333984375,
+        "speed_limit": 0.0
+      }
+    },
+    "trailer": [
+      {
+        "config": {
+          "id": "scs_gooseneck.black220x2esii",
+          "cargoAccessoryId": "scs_container.container_2x20_blue",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": -3.444671630859375
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "WUP-21",
+          "licensePlateCountry": "Finland",
+          "licensePlateCountryId": "finland",
+          "chainType": "single",
+          "bodyType": "container",
+          "wheelCount": 6
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 47322.01844787598,
+            "y": 19.249818801879883,
+            "z": -56607.660705566406
+          },
+          "orientation": {
+            "heading": 191.48541259765625,
+            "pitch": -0.012512905523180962,
+            "roll": 0.05645834282040596
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0005462239496409893,
+          "y": -0.00017251721874345094,
+          "z": 0.0004133355396334082
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.00007544269465142861,
+          "y": -0.000014132018804957625,
+          "z": -0.000013912333088228479
+        },
+        "localAngularAcceleration": {
+          "x": 0.000003107337761321105,
+          "y": -0.000011395874935260508,
+          "z": 0.00012177517783129588
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": true,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": true,
+            "rotation": 0.9997239112854004,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0026781177148222923,
+            "velocity": -0.00006043561006663367,
+            "config": {
+              "isLiftable": true,
+              "position": {
+                "x": -0.8199999928474426,
+                "y": 0.5120000243186951,
+                "z": 2.9505040645599365
+              },
+              "isPowered": false,
+              "radius": 0.4977928102016449,
+              "isSimulated": true,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": true,
+            "rotation": 0.9442790746688843,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0030663013458251953,
+            "velocity": -0.000024016297174966894,
+            "config": {
+              "isLiftable": true,
+              "position": {
+                "x": 0.8199999928474426,
+                "y": 0.5120000243186951,
+                "z": 2.9505040645599365
+              },
+              "isPowered": false,
+              "radius": 0.4977928102016449,
+              "isSimulated": true,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": true,
+            "rotation": 0.8886433839797974,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0010711383074522018,
+            "velocity": -0.00006691252201562747,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": -0.8199999928474426,
+                "y": 0.5120000243186951,
+                "z": 4.304325103759766
+              },
+              "isPowered": false,
+              "radius": 0.4977928102016449,
+              "isSimulated": true,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": true,
+            "rotation": 0.8331144452095032,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0003213644085917622,
+            "velocity": -0.00005466904258355498,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.8199999928474426,
+                "y": 0.5120000243186951,
+                "z": 4.304325103759766
+              },
+              "isPowered": false,
+              "radius": 0.4977928102016449,
+              "isSimulated": true,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": true,
+            "rotation": 0.7775979042053223,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.00043009757064282894,
+            "velocity": -0.000028679807655862533,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": -0.8199999928474426,
+                "y": 0.5120000243186951,
+                "z": 5.627838134765625
+              },
+              "isPowered": false,
+              "radius": 0.4977928102016449,
+              "isSimulated": true,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": true,
+            "rotation": 0.7220578193664551,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": -0.0004749727086164057,
+            "velocity": -0.00002351834518776741,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.8199999928474426,
+                "y": 0.5120000243186951,
+                "z": 5.627838134765625
+              },
+              "isPowered": false,
+              "radius": 0.4977928102016449,
+              "isSimulated": true,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      },
+      {
+        "config": {
+          "id": "",
+          "cargoAccessoryId": "",
+          "hookPosition": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "brandId": "",
+          "brand": "",
+          "name": "",
+          "licensePlate": "",
+          "licensePlateCountry": "",
+          "licensePlateCountryId": "",
+          "chainType": "",
+          "bodyType": "",
+          "wheelCount": 0
+        },
+        "worldPlacement": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "heading": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0
+          }
+        },
+        "localLinearVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularVelocity": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localLinearAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "localAngularAcceleration": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "wear": {
+          "body": 0.0,
+          "chassis": 0.0,
+          "wheels": 0.0
+        },
+        "connected": false,
+        "cargoDamage": 0.0,
+        "wheels": [
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          },
+          {
+            "lift": 0.0,
+            "liftOffset": 0.0,
+            "isOnGround": false,
+            "rotation": 0.0,
+            "steering": 0.0,
+            "substance": 0,
+            "suspensionDeflection": 0.0,
+            "velocity": 0.0,
+            "config": {
+              "isLiftable": false,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "isPowered": false,
+              "radius": 0.0,
+              "isSimulated": false,
+              "isSteerable": false
+            }
+          }
+        ]
+      }
+    ],
+    "job": {
+      "cargoId": "motor_oil_c",
+      "cargo": "Motor Oil",
+      "cargoUnitCount": 0,
+      "cargoMass": 14164.7998046875,
+      "cargoUnitMass": 472.1600036621094,
+      "deliveryTime": 965,
+      "plannedDistance": 68,
+      "income": 1088,
+      "destinationCity": "Helsinki",
+      "destinationCityId": "helsinki",
+      "sourceCity": "Helsinki",
+      "sourceCityId": "helsinki",
+      "destinationCompany": "Container port",
+      "destinationCompanyId": "cont_port",
+      "sourceCompany": "IBP",
+      "sourceCompanyId": "ibp",
+      "jobMarket": "quick_job",
+      "isCargoLoaded": true,
+      "isSpecialJob": false,
+      "cargoDamage": 0.0
+    }
+  }
+}
