@@ -20,7 +20,7 @@ Detailed documentation may come later.
 
 **Remember to recursively clone this repository to get all dependencies!**
 
-The build process has only been tested with GCC, results with other compilers are not known.
+The build process has been tested with GCC and MSVC(under Wine on Linux), the results with other compilers are not known.
 
 ### Linux/macOS/MinGW
 ```
@@ -29,3 +29,9 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j8
 ```
+
+## Third-party libraries
+
+The plugin uses SCS Software's telemetry SDK, which is available under the MIT License (see *include/scs_sdk/LICENSE*).
+
+The plugin uses Niels Lohmann's [json library](https://github.com/nlohmann/json), available under the MIT license.

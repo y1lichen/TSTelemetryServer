@@ -3,12 +3,21 @@ This file is part of TSTelemetryServer.
 
 Copyright (C) 2024 OrkenWhite.
 
-TSTelemetryServer is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+TSTelemetryServer is free software: you can redistribute it and/or modify it 
+under the terms of the GNU Lesser General Public License as published by the 
+Free Software Foundation, either version 3 of the License, 
+or (at your option) any later version.
 
-TSTelemetryServer is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+TSTelemetryServer is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public License along with TSTelemetryServer. If not, see <https://www.gnu.org/licenses/>. 
+You should have received a copy of the 
+GNU Lesser General Public License along with TSTelemetryServer. 
+If not, see <https://www.gnu.org/licenses/>. 
 */
+
 #ifndef TELEMETRY_TRUCK_H
 #define TELEMETRY_TRUCK_H
 #include "telemetry_common.h"
@@ -150,7 +159,7 @@ struct TelemetryTruck{
         bool liftAxle = false;
         bool liftAxleIndicator = false;
         bool trailerLiftAxle = false;
-         bool trailerLiftAxleIndicator = false;
+        bool trailerLiftAxleIndicator = false;
         TelemetryWheel wheels[MAX_WHEEL_COUNT];
         TelemetryTruckWear wear = {};
         scs_double_t odometer = scs_double_t(0.0);
