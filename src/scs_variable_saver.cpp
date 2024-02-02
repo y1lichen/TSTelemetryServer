@@ -22,9 +22,11 @@ If not, see <https://www.gnu.org/licenses/>.
 #include "scs_variable_saver.h"
 #include "telemetry.h"
 
+#define UNUSED(x)
+
 namespace ScsVariableSaver
 {
-    void StoreScsOrientation(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsOrientation(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         TelemetryOrientation *target = (TelemetryOrientation *)context;
 
@@ -32,7 +34,7 @@ namespace ScsVariableSaver
         target->pitch = value->value_euler.pitch * 360.0f;
         target->roll = value->value_euler.roll * 360.0f;
     }
-    void StoreScsVector(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsVector(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         TelemetryVec3D *target = (TelemetryVec3D *)context;
 
@@ -40,7 +42,7 @@ namespace ScsVariableSaver
         target->y = value->value_dvector.y;
         target->z = value->value_dvector.z;
     }
-    void StoreScsPlacement(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsPlacement(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         TelemetryPlacement *target = (TelemetryPlacement *)context;
         scs_value_dplacement_t *source = (scs_value_dplacement_t *)&value->value_dplacement;
@@ -53,42 +55,42 @@ namespace ScsVariableSaver
         target->position.y = source->position.y;
         target->position.z = source->position.z;
     }
-    void StoreScsString(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsString(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         std::string *target = (std::string *)context;
         *target = std::string(value->value_string.value);
     }
-    void StoreScsDouble(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsDouble(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         scs_double_t *target = (scs_double_t *)context;
         *target = value->value_double.value;
     }
-    void StoreScsFloat(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsFloat(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         scs_float_t *target = (scs_float_t *)context;
         *target = value->value_float.value;
     }
-    void StoreScsS32(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsS32(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         scs_s32_t *target = (scs_s32_t *)context;
         *target = value->value_s32.value;
     }
-    void StoreScsU32(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsU32(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         scs_u32_t *target = (scs_u32_t *)context;
         *target = value->value_u32.value;
     }
-    void StoreScsS64(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsS64(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         scs_s64_t *target = (scs_s64_t *)context;
         *target = value->value_s64.value;
     }
-    void StoreScsU64(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsU64(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         scs_u64_t *target = (scs_u64_t *)context;
         *target = value->value_u64.value;
     }
-    void StoreScsBool(const scs_string_t name, const scs_u32_t index, const scs_value_t *const value, const scs_context_t context)
+    void StoreScsBool(const scs_string_t UNUSED(name), const scs_u32_t UNUSED(index), const scs_value_t *const value, const scs_context_t context)
     {
         bool *target = (bool *)context;
         *target = value->value_bool.value != 0;

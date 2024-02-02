@@ -39,3 +39,7 @@ std::string JsonTelemetrySerializer::SerializeEvent(TelemetryGameplayEvent* fram
         serializedFrame["payload"] = *frame;
         return serializedFrame.dump();
 }
+
+JsonTelemetrySerializer::~JsonTelemetrySerializer(){
+
+}

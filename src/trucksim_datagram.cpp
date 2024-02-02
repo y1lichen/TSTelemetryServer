@@ -40,6 +40,8 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <windows.h>
 #endif
 
+#define UNUSED(x)
+
 EventQueue eventQueue;
 TelemetryFrame telemetryData = {};
 bool frameChanged = true;
@@ -50,13 +52,12 @@ std::jthread *networkThread;
 
 scs_log_t gameLog;
 
-SCSAPI_VOID telemetry_frame_start(const scs_event_t event, const void *const event_info, scs_context_t context)
+SCSAPI_VOID telemetry_frame_start(const scs_event_t UNUSED(event), const void *const UNUSED(event_info), scs_context_t UNUSED(context))
 {
-        /* Nothing useful here */
-        auto info = (scs_telemetry_frame_start_t *)event_info;
+        /* Nothing useful here yet */
 }
 
-SCSAPI_VOID telemetry_frame_end(const scs_event_t event, const void *const event_info, scs_context_t context)
+SCSAPI_VOID telemetry_frame_end(const scs_event_t UNUSED(event), const void *const UNUSED(event_info), scs_context_t UNUSED(context))
 {
         if (frameChanged)
         {
@@ -65,13 +66,13 @@ SCSAPI_VOID telemetry_frame_end(const scs_event_t event, const void *const event
         frameChanged = false;
 }
 
-SCSAPI_VOID telemetry_pause(const scs_event_t event, const void *const event_info, scs_context_t context)
+SCSAPI_VOID telemetry_pause(const scs_event_t UNUSED(event), const void *const UNUSED(event_info), scs_context_t UNUSED(context))
 {
         telemetryData.paused = !telemetryData.paused;
         frameChanged = true;
 }
 
-SCSAPI_VOID telemetry_configuration(const scs_event_t event, const void *const event_info, scs_context_t context)
+SCSAPI_VOID telemetry_configuration(const scs_event_t UNUSED(event), const void *const event_info, scs_context_t UNUSED(context))
 {
         auto info = (scs_telemetry_configuration_t *)event_info;
         if (strcmp(SCS_TELEMETRY_CONFIG_truck, info->id) == 0)
@@ -111,7 +112,7 @@ SCSAPI_VOID telemetry_configuration(const scs_event_t event, const void *const e
         frameChanged = true;
 }
 
-SCSAPI_VOID telemetry_gameplay(const scs_event_t event, const void *const event_info, scs_context_t context)
+SCSAPI_VOID telemetry_gameplay(const scs_event_t UNUSED(event), const void *const event_info, scs_context_t UNUSED(context))
 {
         auto info = (scs_telemetry_gameplay_event_t *)event_info;
         if (strncmp("job", info->id, 3) == 0)
@@ -509,7 +510,7 @@ SCSAPI_VOID scs_telemetry_shutdown()
 }
 
 #ifdef _WIN32
-BOOL APIENTRY DllMain(HMODULE module, DWORD reason_for_call, LPVOID reserved)
+BOOL APIENTRY DllMain(HMODULE UNUSED(module), DWORD reason_for_call, LPVOID UNUSED(reserved))
 {
         if (reason_for_call == DLL_PROCESS_DETACH)
         {

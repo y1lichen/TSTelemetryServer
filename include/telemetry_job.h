@@ -25,23 +25,23 @@ If not, see <https://www.gnu.org/licenses/>.
 #include "telemetry_common.h"
 
 struct TelemetryJob{
-        std::string cargoId;
-        std::string cargo;
+        std::string cargoId = std::string();
+        std::string cargo = std::string();
         scs_u32_t cargoUnitCount = scs_u32_t(0);
         scs_double_t cargoMass = scs_double_t(0.0);
         scs_double_t cargoUnitMass = scs_double_t(0.0);
         scs_u32_t deliveryTime = scs_u32_t(0);
         scs_u32_t plannedDistance = scs_u32_t(0);
         scs_u64_t income = scs_u64_t(0);
-        std::string destinationCity;
-        std::string destinationCityId;
-        std::string sourceCity;
-        std::string sourceCityId;
-        std::string destinationCompany;
-        std::string destinationCompanyId;
-        std::string sourceCompany;
-        std::string sourceCompanyId;
-        std::string jobMarket;
+        std::string destinationCity = std::string();
+        std::string destinationCityId = std::string();
+        std::string sourceCity = std::string();
+        std::string sourceCityId = std::string();
+        std::string destinationCompany = std::string();
+        std::string destinationCompanyId = std::string();
+        std::string sourceCompany = std::string();
+        std::string sourceCompanyId = std::string();
+        std::string jobMarket = std::string();
         bool isCargoLoaded = false;
         bool isSpecialJob = false;
         scs_double_t cargoDamage = scs_double_t(0.0);

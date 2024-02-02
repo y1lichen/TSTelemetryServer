@@ -29,6 +29,7 @@ class JsonTelemetrySerializer: public AbstractTelemetrySerializer{
 public:
         virtual std::string SerializeFrame(TelemetryFrame*);
         virtual std::string SerializeEvent(TelemetryGameplayEvent*);
+        virtual ~JsonTelemetrySerializer();
 };
 
 #endif
