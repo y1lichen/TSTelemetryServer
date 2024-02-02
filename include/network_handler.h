@@ -31,6 +31,7 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #define CLOSE_SOCKET closesocket
+typedef long ssize_t;
 #else
 #include <unistd.h>
 #include <sys/socket.h>
@@ -42,7 +43,7 @@ If not, see <https://www.gnu.org/licenses/>.
 #define CLOSE_SOCKET close
 #endif
 #define MAX_CLIENTS 8
-#define TIMEOUT_USEC 1000
+#define TIMEOUT_SEND_SEC 5
 #define PORT 3101
 
 class NetworkHandler{
@@ -61,10 +62,12 @@ class NetworkHandler{
                 ~NetworkHandler();
                 EventQueue* m_eventQueue;
                 int m_port;
-                struct timeval m_timeout;
+                struct timeval m_send_timeout;
+                struct timeval m_select_timeout;
                 struct sockaddr_in address;
                 fd_set m_subscriberSet;
                 std::string m_lastSentFrame;
+                int sendMessage(SOCKET socket,const char* msg,ssize_t size);
                 void newConnection();
                 void checkDeadConnections();
                 void checkQueue();

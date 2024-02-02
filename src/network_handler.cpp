@@ -42,7 +42,10 @@ NetworkHandler::NetworkHandler(EventQueue* eventQueue){
     m_eventQueue = eventQueue;
     memset(&address,0,sizeof(sockaddr));
     m_port = PORT;
-    m_timeout.tv_usec = TIMEOUT_USEC;
+    m_send_timeout.tv_usec = 0;
+    m_send_timeout.tv_sec = TIMEOUT_SEND_SEC;
+    m_select_timeout.tv_sec = 0;
+    m_select_timeout.tv_usec = 0;
     address.sin_family = AF_INET;
     address.sin_port = htons(m_port);
     address.sin_addr.s_addr = INADDR_ANY;
@@ -69,6 +72,26 @@ std::jthread* NetworkHandler::GetEventThread(EventQueue* eventQueue){
     return new std::jthread([](std::stop_token st){m_instance->EventLoop(st);});
 }
 
+int NetworkHandler::sendMessage(SOCKET socket,const char* msg,ssize_t size){
+    ssize_t sent = send(socket,msg,size,0);
+    if(sent != -1){
+        while(sent < size){
+            ssize_t remainder = size-sent;
+            ssize_t sentNext = send(socket,msg+sent,remainder,0);
+            if(sentNext != -1){
+                sent += sentNext;
+            }
+            else{
+                return -1;
+            }
+        }
+    }
+    else{
+        return -1;
+    }
+    return 0;
+}
+
 void NetworkHandler::fdReset(){
     FD_ZERO(&m_subscriberSet);
     FD_SET(m_topSocket,&m_subscriberSet);
@@ -90,10 +113,15 @@ void NetworkHandler::newConnection(){
         return;
     }
     if(newSocket > 0){
-        m_subscribers.push_back(newSocket);
+        int lastError = setsockopt(newSocket,SOL_SOCKET,SO_SNDTIMEO,(char*)&m_send_timeout,sizeof(m_send_timeout));
         const char* event = m_lastSentFrame.c_str();
         size_t event_size = strlen(event) + 1;
-        send(newSocket,event,event_size,0);
+        lastError = sendMessage(newSocket,event,(ssize_t) event_size);
+        if(lastError == -1){
+            CLOSE_SOCKET(newSocket);
+            return;
+        }
+        m_subscribers.push_back(newSocket);
     }
 }
 
@@ -122,8 +150,15 @@ void NetworkHandler::checkQueue(){
         }
         const char* event = poppedEvent.event.c_str();
         size_t event_size = strlen(event) + 1;
+        std::vector<SOCKET> deadSockets;
         for(SOCKET s : m_subscribers){
-            send(s,event,event_size,0);
+            if(sendMessage(s,event,(ssize_t) event_size) == -1){
+                CLOSE_SOCKET(s);
+                deadSockets.push_back(s);
+            }
+        }
+        for(SOCKET s : deadSockets){
+            m_subscribers.remove(s);
         }
         if(poppedEvent.type == EVENT_FRAME)
         {
@@ -135,7 +170,7 @@ void NetworkHandler::checkQueue(){
 void NetworkHandler::EventLoop(std::stop_token stopToken){
     while(!stopToken.stop_requested()){
         fdReset();
-        int lastError = select(m_maxSocket+1,&m_subscriberSet,NULL,NULL,&m_timeout);
+        int lastError = select(m_maxSocket+1,&m_subscriberSet,NULL,NULL,&m_select_timeout);
         /*
          * This is present mostly for debugging purposes
          */
