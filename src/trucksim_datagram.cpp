@@ -107,7 +107,7 @@ SCSAPI_VOID telemetry_gameplay(const scs_event_t event, const void *const event_
         auto info = (scs_telemetry_gameplay_event_t *)event_info;
         if (strncmp("job", info->id, 3) == 0)
         {
-                telemetryData.job = (struct TelemetryJob){0};
+                telemetryData.job = {0};
         }
         TelemetryGameplayEvent eventObj = {};
         eventObj.eventType = std::string(info->id);

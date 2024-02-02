@@ -30,15 +30,21 @@ add_library(TSTelemetryServer SHARED
 )
 
 if(WIN32)
-    target_link_libraries(TSTelemetryServer wsock32 ws2_32)
-    target_link_options(TSTelemetryServer PRIVATE -static -static-libgcc -static-libstdc++)
-    target_compile_options(TSTelemetryServer PRIVATE -O1)
+    target_link_libraries(TSTelemetryServer PRIVATE wsock32 ws2_32)
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        target_link_options(TSTelemetryServer PRIVATE -static -static-libgcc -static-libstdc++)
+    endif()
 endif()
-if(LINUX)
-    target_compile_options(TSTelemetryServer PRIVATE -O3)
+
+if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+target_link_options(TSTelemetryServer PRIVATE /constexpr:depth1024)
+else()
+    target_compile_options(TSTelemetryServer PRIVATE -fconstexpr-depth=1024)
 endif()
 
 target_link_libraries(TSTelemetryServer PRIVATE reflectcpp)
 target_include_directories(TSTelemetryServer PRIVATE include)
 target_include_directories(TSTelemetryServer PRIVATE include/reflect-cpp)
-target_compile_options(TSTelemetryServer PRIVATE -fconstexpr-depth=1024)
+
+add_custom_command(TARGET TSTelemetryServer POST_BUILD
+    COMMAND $<$<CONFIG:release>:${CMAKE_STRIP} ${PROJECT_NAME}>)
