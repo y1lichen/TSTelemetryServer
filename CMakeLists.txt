@@ -18,7 +18,7 @@ GNU Lesser General Public License along with TSTelemetryServer.
 If not, see <https://www.gnu.org/licenses/>. 
 ]]#
 
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.15)
 
 project(ts_telemetry_server)
 
@@ -42,6 +42,11 @@ if(WIN32)
     target_link_libraries(TSTelemetryServer PRIVATE wsock32 ws2_32)
     if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
         target_link_options(TSTelemetryServer PRIVATE -static -static-libgcc -static-libstdc++)
+    elseif (MSVC)
+        set_property(TARGET TSTelemetryServer PROPERTY
+                     MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+        set(CMAKE_LINK_DEF_FILE_FLAG "/DEF:")
+        target_sources(TSTelemetryServer PRIVATE src/TSTelemetryServer.def)
     endif()
 endif()
 
