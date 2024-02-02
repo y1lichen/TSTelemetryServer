@@ -30,6 +30,10 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j8
 ```
 
+## License
+
+This library is available under the GNU Lesser General Public License, version 3. See the *COPYING* and *COPYING.LESSER* files for details.
+
 ## Third-party libraries
 
 The plugin uses SCS Software's telemetry SDK, which is available under the MIT License (see *include/scs_sdk/LICENSE*).
