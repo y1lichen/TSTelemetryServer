@@ -52,7 +52,15 @@ endif()
 if(MSVC)
   target_compile_options(TSTelemetryServer PRIVATE /W4)
 else()
-  target_compile_options(TSTelemetryServer PRIVATE -Wall -Wextra -Wpedantic)
+  target_compile_options(TSTelemetryServer PRIVATE -Wall -Wextra -Wpedantic 
+                         -Wcast-align -Wcast-qual -Wctor-dtor-privacy 
+                         -Wdisabled-optimization -Wformat=2 -Winit-self 
+                         -Wlogical-op -Wmissing-include-dirs -Wnoexcept 
+                         -Wold-style-cast -Woverloaded-virtual 
+                         -Wredundant-decls -Wshadow -Wsign-promo 
+                         -Wstrict-null-sentinel -Wstrict-overflow=5 
+                         -Wundef -Wno-unused -Wno-variadic-macros 
+                         -Wno-parentheses -fdiagnostics-show-option)
 endif()
 
 target_link_libraries(TSTelemetryServer PRIVATE nlohmann_json::nlohmann_json)
