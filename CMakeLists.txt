@@ -32,7 +32,7 @@ add_subdirectory(json)
 add_library(TSTelemetryServer SHARED 
     src/json_telemetry_serializer.cpp  
     src/network_handler.cpp  
-    src/trucksim_datagram.cpp
+    src/ts_telemetry_server.cpp
     src/event_queue.cpp 
     src/config_handler.cpp
     src/scs_variable_saver.cpp
@@ -58,8 +58,8 @@ else()
                          -Wlogical-op -Wmissing-include-dirs -Wnoexcept 
                          -Wold-style-cast -Woverloaded-virtual 
                          -Wredundant-decls -Wshadow -Wsign-promo 
-                         -Wstrict-null-sentinel -Wstrict-overflow=5 
-                         -Wundef -Wno-unused -Wno-variadic-macros 
+                         -Wstrict-null-sentinel -Wundef 
+                         -Wno-unused -Wno-variadic-macros 
                          -Wno-parentheses -fdiagnostics-show-option)
 endif()
 
