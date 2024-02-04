@@ -112,6 +112,42 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TelemetryJob,cargo,cargoId,cargoUnitCount,
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TelemetryFrame,gameTime,localScale,
                                    multiplayerTimeOffset,restStop,paused,truck,
                                    trailer,job)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TelemetryGameplayEvent,eventType,attributes)
+
+/* Gameplay events are ugly*/
+void to_json(nlohmann::json& j, const TelemetryGameplayEvent& gameplayEvent){
+    j = nlohmann::json();
+    j["eventType"] = gameplayEvent.eventType;
+    nlohmann::json attributes = nlohmann::json();
+    for(auto const& [name,value] : gameplayEvent.attributes){
+        if(std::holds_alternative<std::string>(value)){
+            attributes[name] = std::get<std::string>(value);
+        }
+        else if(std::holds_alternative<scs_float_t>(value)){
+            attributes[name] = std::get<scs_float_t>(value);
+        }
+        else if(std::holds_alternative<scs_double_t>(value)){
+            attributes[name] = std::get<scs_double_t>(value);
+        }
+        else if(std::holds_alternative<scs_s32_t>(value)){
+            attributes[name] = std::get<scs_s32_t>(value);
+        }
+        else if(std::holds_alternative<scs_s64_t>(value)){
+            attributes[name] = std::get<scs_s64_t>(value);
+        }
+        else if(std::holds_alternative<scs_u32_t>(value)){
+            attributes[name] = std::get<scs_u32_t>(value);
+        }
+        else if(std::holds_alternative<scs_u64_t>(value)){
+            attributes[name] = std::get<scs_u64_t>(value);
+        }
+        else if(std::holds_alternative<bool>(value)){
+            attributes[name] = std::get<bool>(value);
+        }
+        else{
+            attributes[name] = 0;
+        }
+    }
+    j["attributes"] = attributes;
+}
 
 #endif

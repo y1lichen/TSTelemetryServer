@@ -60,7 +60,8 @@ else()
                          -Wredundant-decls -Wshadow -Wsign-promo 
                          -Wstrict-null-sentinel -Wundef 
                          -Wno-unused -Wno-variadic-macros 
-                         -Wno-parentheses -fdiagnostics-show-option)
+                         -Wno-parentheses -fdiagnostics-show-option
+                         $<$<CONFIG:DEBUG>:-ggdb>)
 endif()
 
 target_link_libraries(TSTelemetryServer PRIVATE nlohmann_json::nlohmann_json)

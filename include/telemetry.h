@@ -27,8 +27,11 @@ If not, see <https://www.gnu.org/licenses/>.
 #include "telemetry_job.h"
 #include <unordered_map>
 #include <string>
+#include <variant>
 
 #define MAX_TRAILERS SCS_TELEMETRY_trailers_count
+
+#define GAMEPLAY_ATTR_VARIANT std::variant<std::string,scs_float_t,scs_double_t,scs_s32_t,scs_s64_t,scs_u32_t,scs_u64_t,bool>
 
 struct TelemetryFrame{
         scs_u32_t gameTime = scs_u32_t(0);
@@ -47,7 +50,7 @@ struct TelemetryFrame{
  * */
 struct TelemetryGameplayEvent{
         std::string eventType;
-        std::unordered_map<std::string,std::string> attributes;
+        std::unordered_map<std::string, GAMEPLAY_ATTR_VARIANT> attributes;
 };
 
 template <typename T>

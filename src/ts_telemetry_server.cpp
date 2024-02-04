@@ -115,39 +115,39 @@ SCSAPI_VOID telemetry_configuration(const scs_event_t UNUSED(event), const void 
 SCSAPI_VOID telemetry_gameplay(const scs_event_t UNUSED(event), const void *const event_info, scs_context_t UNUSED(context))
 {
         auto info = static_cast<const scs_telemetry_gameplay_event_t*>(event_info);
-        if (strncmp("job", info->id, 3) == 0)
+        if (std::string(info->id).find("job") != std::string::npos)
         {
-                telemetryData.job = {0};
+                telemetryData.job = {};
         }
         TelemetryGameplayEvent eventObj = {};
-        eventObj.eventType = std::string(info->id);
-        for (auto attr = info->attributes; attr != NULL; ++attr)
+        eventObj.eventType = info->id;
+        for (auto attr = info->attributes;attr->name; ++attr)
         {
                 switch (attr->value.type)
                 {
                 case SCS_VALUE_TYPE_string:
-                        eventObj.attributes[attr->name] = std::string(attr->value.value_string.value);
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_string.value;
                         break;
                 case SCS_VALUE_TYPE_float:
-                        eventObj.attributes[attr->name] = std::to_string(attr->value.value_float.value);
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_float.value;
                         break;
                 case SCS_VALUE_TYPE_double:
-                        eventObj.attributes[attr->name] = std::to_string(attr->value.value_double.value);
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_double.value;
                         break;
                 case SCS_VALUE_TYPE_s32:
-                        eventObj.attributes[attr->name] = std::to_string(attr->value.value_s32.value);
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_s32.value;
                         break;
                 case SCS_VALUE_TYPE_s64:
-                        eventObj.attributes[attr->name] = std::to_string(attr->value.value_s64.value);
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_s64.value;
                         break;
                 case SCS_VALUE_TYPE_u32:
-                        eventObj.attributes[attr->name] = std::to_string(attr->value.value_u32.value);
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_u32.value;
                         break;
                 case SCS_VALUE_TYPE_u64:
-                        eventObj.attributes[attr->name] = std::to_string(attr->value.value_u64.value);
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_u64.value;
                         break;
                 case SCS_VALUE_TYPE_bool:
-                        eventObj.attributes[attr->name] = attr->value.value_bool.value != 0 ? "true" : "false";
+                        eventObj.attributes[std::string(attr->name)] = attr->value.value_bool.value != 0;
                         break;
                 default:
                         break;
@@ -461,7 +461,8 @@ SCSAPI_RESULT scs_telemetry_init(const scs_u32_t version, const scs_telemetry_in
                                        (registerEvent(SCS_TELEMETRY_EVENT_paused, telemetry_pause, NULL) == SCS_RESULT_ok) &&
                                        (registerEvent(SCS_TELEMETRY_EVENT_started, telemetry_pause, NULL) == SCS_RESULT_ok) &&
                                        (registerEvent(SCS_TELEMETRY_EVENT_frame_start, telemetry_frame_start, NULL) == SCS_RESULT_ok) &&
-                                       (registerEvent(SCS_TELEMETRY_EVENT_frame_end, telemetry_frame_end, NULL) == SCS_RESULT_ok);
+                                       (registerEvent(SCS_TELEMETRY_EVENT_frame_end, telemetry_frame_end, NULL) == SCS_RESULT_ok) && 
+                                       (registerEvent(SCS_TELEMETRY_EVENT_gameplay,telemetry_gameplay,NULL) == SCS_RESULT_ok);
         if (!eventRegistration)
         {
                 gameLog(SCS_LOG_TYPE_error, "TSTelemetryServer: Unable to register events!");

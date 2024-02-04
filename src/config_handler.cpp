@@ -84,7 +84,7 @@ std::map<std::string,void(*)(const scs_value_t*,scs_u32_t,TelemetryTruck*)> truc
         tr->config.wheelCount = v->value_u32.value;
         /*Zero out all non-existent wheels*/
         for(scs_u32_t j = v->value_u32.value;j<MAX_WHEEL_COUNT;++j){
-            tr->wheels[j] = {0};
+            tr->wheels[j] = {};
         }}},
     {SCS_TELEMETRY_CONFIG_ATTRIBUTE_wheel_position,[](const scs_value_t* v,scs_u32_t i, TelemetryTruck* tr){
         tr->wheels[i].config.position.x = v->value_fvector.x;
@@ -129,7 +129,7 @@ std::map<std::string,void(*)(const scs_value_t*,scs_u32_t,TelemetryTrailer*)> tr
         tr->config.wheelCount = v->value_u32.value;
         /*Zero out all non-existent wheels*/
         for(scs_u32_t j = v->value_u32.value;j<MAX_WHEEL_COUNT;++j){
-            tr->wheels[j] = {0};
+            tr->wheels[j] = {};
         }}},
     {SCS_TELEMETRY_CONFIG_ATTRIBUTE_wheel_position,[](const scs_value_t* v,scs_u32_t i, TelemetryTrailer* tr){
         tr->wheels[i].config.position.x = v->value_fvector.x;
