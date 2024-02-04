@@ -43,11 +43,6 @@ struct TelemetryFrame{
         TelemetryTrailer trailer[MAX_TRAILERS] = {};
         TelemetryJob job = {};
 };
-
-/*
- * Gameplay event type.
- * All attributes are converted to string for safe storage.
- * */
 struct TelemetryGameplayEvent{
         std::string eventType;
         std::unordered_map<std::string, GAMEPLAY_ATTR_VARIANT> attributes;
