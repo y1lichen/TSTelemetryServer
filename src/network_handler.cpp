@@ -51,11 +51,12 @@ NetworkHandler::NetworkHandler(EventQueue* eventQueue){
     address.sin_addr.s_addr = INADDR_ANY;
     m_topSocket = socket(AF_INET,SOCK_STREAM,0);
     int flag = 1;
-    int lastError = setsockopt(m_topSocket,IPPROTO_TCP,TCP_NODELAY,(char*)&flag,sizeof(int));
+    int lastError = setsockopt(m_topSocket,IPPROTO_TCP,TCP_NODELAY,
+                               reinterpret_cast<char*>(&flag),sizeof(int));
     if(lastError < 0){
         throw std::runtime_error("Unable to set socket options!");
     }
-    lastError = bind(m_topSocket,(struct sockaddr*) &address,sizeof(address));
+    lastError = bind(m_topSocket,reinterpret_cast<struct sockaddr*>(&address),sizeof(address));
     if(lastError < 0){
         throw std::runtime_error("Unable to bind to address!");
     }
@@ -107,16 +108,20 @@ void NetworkHandler::fdReset(){
 void NetworkHandler::newConnection(){
     sockaddr_in incoming;
     socklen_t addrlen = sizeof(incoming);
-    SOCKET newSocket = accept(m_topSocket,(struct sockaddr*) &incoming,&addrlen);
+    SOCKET newSocket = accept(m_topSocket,
+                              reinterpret_cast<struct sockaddr*>(&incoming),
+                              &addrlen);
     if(m_subscribers.size() > MAX_CLIENTS){
         CLOSE_SOCKET(newSocket);
         return;
     }
     if(newSocket > 0){
-        int lastError = setsockopt(newSocket,SOL_SOCKET,SO_SNDTIMEO,(char*)&m_send_timeout,sizeof(m_send_timeout));
+        int lastError = setsockopt(newSocket,SOL_SOCKET,SO_SNDTIMEO,
+                                   reinterpret_cast<char*>(&m_send_timeout),
+                                   sizeof(m_send_timeout));
         const char* event = m_lastSentFrame.c_str();
         size_t event_size = strlen(event) + 1;
-        lastError = sendMessage(newSocket,event,(ssize_t) event_size);
+        lastError = sendMessage(newSocket,event,static_cast<ssize_t>(event_size));
         if(lastError == -1){
             CLOSE_SOCKET(newSocket);
             return;
@@ -152,7 +157,7 @@ void NetworkHandler::checkQueue(){
         size_t event_size = strlen(event) + 1;
         std::vector<SOCKET> deadSockets;
         for(SOCKET s : m_subscribers){
-            if(sendMessage(s,event,(ssize_t) event_size) == -1){
+            if(sendMessage(s,event,static_cast<ssize_t>(event_size)) == -1){
                 CLOSE_SOCKET(s);
                 deadSockets.push_back(s);
             }

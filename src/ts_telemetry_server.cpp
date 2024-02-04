@@ -74,7 +74,7 @@ SCSAPI_VOID telemetry_pause(const scs_event_t UNUSED(event), const void *const U
 
 SCSAPI_VOID telemetry_configuration(const scs_event_t UNUSED(event), const void *const event_info, scs_context_t UNUSED(context))
 {
-        auto info = (scs_telemetry_configuration_t *)event_info;
+        auto info = static_cast<const scs_telemetry_configuration_t*>(event_info);
         if (strcmp(SCS_TELEMETRY_CONFIG_truck, info->id) == 0)
         {
                 ConfigHandler::HandleTruckConfig(info->attributes, &telemetryData.truck);
@@ -114,7 +114,7 @@ SCSAPI_VOID telemetry_configuration(const scs_event_t UNUSED(event), const void 
 
 SCSAPI_VOID telemetry_gameplay(const scs_event_t UNUSED(event), const void *const event_info, scs_context_t UNUSED(context))
 {
-        auto info = (scs_telemetry_gameplay_event_t *)event_info;
+        auto info = static_cast<const scs_telemetry_gameplay_event_t*>(event_info);
         if (strncmp("job", info->id, 3) == 0)
         {
                 telemetryData.job = {0};
@@ -147,7 +147,7 @@ SCSAPI_VOID telemetry_gameplay(const scs_event_t UNUSED(event), const void *cons
                         eventObj.attributes[attr->name] = std::to_string(attr->value.value_u64.value);
                         break;
                 case SCS_VALUE_TYPE_bool:
-                        eventObj.attributes[attr->name] = std::to_string(attr->value.value_bool.value != 0);
+                        eventObj.attributes[attr->name] = attr->value.value_bool.value != 0 ? "true" : "false";
                         break;
                 default:
                         break;
