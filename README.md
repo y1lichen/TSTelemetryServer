@@ -20,7 +20,7 @@ Detailed documentation may come later.
 
 **Remember to recursively clone this repository to get all dependencies!**
 
-The build process has been tested with GCC and MSVC(under Wine on Linux), the results with other compilers are not known.
+The build process has been tested with GCC, Clang and MSVC(under Wine on Linux), the results with other compilers are not known.
 
 ### Linux/macOS/MinGW
 ```
