@@ -113,7 +113,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TelemetryFrame,gameTime,localScale,
                                    multiplayerTimeOffset,restStop,paused,truck,
                                    trailer,job)
 
-/* Gameplay events are ugly*/
+/* Gameplay events are ugly */
 void to_json(nlohmann::json& j, const TelemetryGameplayEvent& gameplayEvent){
     j = nlohmann::json();
     j["eventType"] = gameplayEvent.eventType;

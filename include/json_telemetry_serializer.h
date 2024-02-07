@@ -27,9 +27,9 @@ If not, see <https://www.gnu.org/licenses/>.
 
 class JsonTelemetrySerializer: public AbstractTelemetrySerializer{
 public:
-        virtual std::string SerializeFrame(TelemetryFrame*);
-        virtual std::string SerializeEvent(TelemetryGameplayEvent*);
-        virtual ~JsonTelemetrySerializer();
+        virtual std::string SerializeFrame(TelemetryFrame*) override;
+        virtual std::string SerializeEvent(TelemetryGameplayEvent*) override;
+        virtual ~JsonTelemetrySerializer() override;
 };
 
 #endif

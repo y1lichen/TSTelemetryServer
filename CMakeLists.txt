@@ -51,7 +51,7 @@ if(WIN32)
 endif()
 if(MSVC)
   target_compile_options(TSTelemetryServer PRIVATE /W4)
-else()
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   target_compile_options(TSTelemetryServer PRIVATE -Wall -Wextra -Wpedantic 
                          -Wcast-align -Wcast-qual -Wctor-dtor-privacy 
                          -Wdisabled-optimization -Wformat=2 -Winit-self 
@@ -59,8 +59,27 @@ else()
                          -Wold-style-cast -Woverloaded-virtual 
                          -Wredundant-decls -Wshadow -Wsign-promo 
                          -Wstrict-null-sentinel -Wundef 
-                         -Wno-unused -Wno-variadic-macros 
-                         -Wno-parentheses -fdiagnostics-show-option
+                         -fdiagnostics-show-option
+                         $<$<CONFIG:DEBUG>:-ggdb>)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  target_compile_options(TSTelemetryServer PRIVATE
+                         -Weverything
+                         -Wno-c++98-compat
+                         -Wno-c++98-compat-pedantic
+                         -Wno-c++98-c++11-compat-pedantic
+                         -Wno-documentation
+                         -Wno-documentation-unknown-command
+                         -Wno-padded
+                         -Wno-newline-eof
+                         -Wno-double-promotion
+                         -Wno-global-constructors
+                         -Wno-missing-variable-declarations
+                         -Wno-exit-time-destructors
+                         -Wno-unsafe-buffer-usage
+                         -Wno-missing-prototypes
+                         -Wno-covered-switch-default
+                         -Wno-zero-as-null-pointer-constant
+                         -Wno-weak-vtables
                          $<$<CONFIG:DEBUG>:-ggdb>)
 endif()
 

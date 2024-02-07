@@ -28,7 +28,7 @@ class AbstractTelemetrySerializer{
         public:
                 virtual std::string SerializeFrame(TelemetryFrame*) = 0;
                 virtual std::string SerializeEvent(TelemetryGameplayEvent*) = 0;
-                virtual ~AbstractTelemetrySerializer(){};
+                virtual ~AbstractTelemetrySerializer(){}
 };
 
 #endif
