@@ -1,3 +1,5 @@
+This fork is based on [OrkenWhite/TSTelemetryServer](https://github.com/OrkenWhite/TSTelemetryServer). The main target of this fork is to build the telemetry server on macos.
+---
 # TSTelemetryServer
 
 This is a plugin for the games *Euro Truck Simulator 2* and *American Truck Simulator* which provides a TCP server on port **3101** and sends telemetry data in JSON to every client.
