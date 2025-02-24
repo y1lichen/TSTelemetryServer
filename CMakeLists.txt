@@ -24,6 +24,8 @@ project(ts_telemetry_server)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexperimental-library")
 
 set(JSON_BuildTests OFF CACHE INTERNAL "")
 
