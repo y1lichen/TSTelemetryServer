@@ -127,6 +127,7 @@ struct TelemetryTruckConfig {
   std::string shifterType;
   std::array<scs_double_t, 24> forwardGearRatios = {};
   std::array<scs_double_t, 8> reverseGearRatios = {};
+  scs_double_t differentialRation = scs_double_t(0.0);
 };
 
 struct TelemetryTruck {

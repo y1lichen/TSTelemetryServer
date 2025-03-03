@@ -29,6 +29,10 @@ If not, see <https://www.gnu.org/licenses/>.
 std::map<std::string,
          void (*)(const scs_value_t *, scs_u32_t, TelemetryTruck *)>
     truckConfigHandlerTable = {
+        {SCS_TELEMETRY_CONFIG_ATTRIBUTE_differential_ratio,
+         [](const scs_value_t *v, scs_u32_t UNUSED(i), TelemetryTruck *tr) {
+           tr->config.differentialRation = v->value_float.value;
+         }},
         {SCS_TELEMETRY_CONFIG_ATTRIBUTE_forward_ratio,
          [](const scs_value_t *v, scs_u32_t i, TelemetryTruck *tr) {
            if (i < 24) {

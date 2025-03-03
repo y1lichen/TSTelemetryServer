@@ -62,9 +62,9 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
     fuelWarningFactor, adblueCapacity, adblueWarningFactor, airPressureWarning,
     airPressureEmergency, oilPressureWarning, waterTemperatureWarning,
     batteryVoltageWarning, rpmLimit, forwardGearCount, reverseGearCount,
-    forwardGearRatios, reverseGearRatios, retarderStepCount, cabinPosition,
-    hookPosition, headPosition, licensePlate, licensePlateCountry,
-    licensePlateCountryId, wheelCount, shifterType)
+    forwardGearRatios, reverseGearRatios, differentialRation, retarderStepCount,
+    cabinPosition, hookPosition, headPosition, licensePlate,
+    licensePlateCountry, licensePlateCountryId, wheelCount, shifterType)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
     TelemetryTruck, config, worldPlacement, localLinearVelocity,
     localLinearAcceleration, localAngularVelocity, localAngularAcceleration,
