@@ -1,4 +1,7 @@
 This fork is based on [OrkenWhite/TSTelemetryServer](https://github.com/OrkenWhite/TSTelemetryServer) and is primarily aimed at building the telemetry server for macOS.
+---
+
+## macos build
 Since ETS2/ATS runs on Mac via Rosetta, this project must be built on the x86 architecture.
 
 ```
@@ -6,6 +9,18 @@ mkdir build && cd build
 arch -x86_64 cmake -DCMAKE_BUILD_TYPE=Release ..
 arch -x86_64 make -j8
 ```
+
+---
+
+## windows build
+
+```
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ ..
+cmake --build . --config Release
+```
+
 ---
 # TSTelemetryServer
 

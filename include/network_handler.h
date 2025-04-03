@@ -31,7 +31,12 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #define CLOSE_SOCKET closesocket
+//typedef long ssize_t;
+#include <stddef.h>
+#ifndef _SSIZE_T_DEFINED
+#define _SSIZE_T_DEFINED
 typedef long ssize_t;
+#endif
 #else
 #include <unistd.h>
 #include <sys/socket.h>

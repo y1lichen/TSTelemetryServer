@@ -47,7 +47,8 @@ NetworkHandler::NetworkHandler(EventQueue* eventQueue){
     m_select_timeout.tv_sec = 0;
     m_select_timeout.tv_usec = 0;
     address.sin_family = AF_INET;
-    address.sin_port = htons(m_port);
+    // address.sin_port = htons(m_port);
+    address.sin_port = htons(static_cast<u_short>(m_port));
     address.sin_addr.s_addr = INADDR_ANY;
     m_topSocket = socket(AF_INET,SOCK_STREAM,0);
     int flag = 1;
@@ -74,7 +75,8 @@ std::jthread* NetworkHandler::GetEventThread(EventQueue* eventQueue){
 }
 
 int NetworkHandler::sendMessage(SOCKET socket,const char* msg,ssize_t size){
-    ssize_t sent = send(socket,msg,size,0);
+    // ssize_t sent = send(socket,msg,size,0);
+    auto sent = send(socket, msg, static_cast<int>(size), 0);
     if(sent != -1){
         while(sent < size){
             ssize_t remainder = size-sent;
@@ -134,7 +136,8 @@ void NetworkHandler::checkDeadConnections(){
     std::vector<SOCKET> deadSockets;
     for(SOCKET s : m_subscribers){
         if(FD_ISSET(s,&m_subscriberSet)){
-            char* buffer = (char*) malloc(16);
+            //char* buffer = (char*) malloc(16);
+            char* buffer = static_cast<char*>(malloc(16));
             if(recv(s,buffer,8,0) == 0){
                 CLOSE_SOCKET(s);
                 deadSockets.push_back(s);
@@ -175,7 +178,8 @@ void NetworkHandler::checkQueue(){
 void NetworkHandler::EventLoop(std::stop_token stopToken){
     while(!stopToken.stop_requested()){
         fdReset();
-        int lastError = select(m_maxSocket+1,&m_subscriberSet,NULL,NULL,&m_select_timeout);
+        //int lastError = select(m_maxSocket+1,&m_subscriberSet,NULL,NULL,&m_select_timeout);
+        int lastError = select(static_cast<int>(m_maxSocket + 1), &m_subscriberSet, NULL, NULL, &m_select_timeout);
         /*
          * This is present mostly for debugging purposes
          */
