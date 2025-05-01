@@ -209,8 +209,9 @@ void NetworkHandler::Cleanup(){
 NetworkHandler::~NetworkHandler(){
     for(SOCKET s : m_subscribers){
         CLOSE_SOCKET(s);
-        m_subscribers.remove(s);
+        // m_subscribers.remove(s);
     }
+    m_subscribers.clear();
     CLOSE_SOCKET(m_topSocket);
     #ifdef _WIN32
     WSACleanup();
