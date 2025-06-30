@@ -23,6 +23,7 @@ If not, see <https://www.gnu.org/licenses/>.
 #include "scs_sdk/scssdk.h"
 #include "telemetry_common.h"
 #include <vector>
+#include <array>
 
 struct TelemetryTruckCabin {
   TelemetryPlacement offset = {};

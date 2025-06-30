@@ -1,23 +1,3 @@
-/*
-This file is part of TSTelemetryServer.
-
-Copyright (C) 2024 OrkenWhite.
-
-TSTelemetryServer is free software: you can redistribute it and/or modify it 
-under the terms of the GNU Lesser General Public License as published by the 
-Free Software Foundation, either version 3 of the License, 
-or (at your option) any later version.
-
-TSTelemetryServer is distributed in the hope that it will be useful, 
-but WITHOUT ANY WARRANTY; without even the implied warranty of 
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-See the GNU Lesser General Public License for more details.
-
-You should have received a copy of the 
-GNU Lesser General Public License along with TSTelemetryServer. 
-If not, see <https://www.gnu.org/licenses/>. 
-*/
-
 #ifndef NETWORK_HANDLER_H
 #define NETWORK_HANDLER_H
 
@@ -27,11 +7,12 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <string>
 #include <thread>
 #include <stop_token>
+#include <mutex>
+
 #ifdef _WIN32
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #define CLOSE_SOCKET closesocket
-//typedef long ssize_t;
 #include <stddef.h>
 #ifndef _SSIZE_T_DEFINED
 #define _SSIZE_T_DEFINED
@@ -47,36 +28,48 @@ typedef long ssize_t;
 #define SOCKET int
 #define CLOSE_SOCKET close
 #endif
+
 #define MAX_CLIENTS 8
 #define TIMEOUT_SEND_SEC 5
 #define PORT 3101
 
-class NetworkHandler{
-        public:
-                static std::jthread* GetEventThread(EventQueue* queue);
-                void EventLoop(std::stop_token stopToken);
-                static void Cleanup();
-        private:
-                #ifdef _WIN32
-                WSAData m_wsaData;
-                #endif
-                SOCKET m_maxSocket = INVALID_SOCKET;
-                SOCKET m_topSocket = INVALID_SOCKET;
-                std::list<SOCKET> m_subscribers;
-                NetworkHandler(EventQueue* queue);
-                ~NetworkHandler();
-                EventQueue* m_eventQueue;
-                int m_port;
-                struct timeval m_send_timeout;
-                struct timeval m_select_timeout;
-                struct sockaddr_in address;
-                fd_set m_subscriberSet;
-                std::string m_lastSentFrame;
-                int sendMessage(SOCKET socket,const char* msg,ssize_t size);
-                void newConnection();
-                void checkDeadConnections();
-                void checkQueue();
-                void fdReset();
-                static NetworkHandler* m_instance;
-};
+class NetworkHandler {
+public:
+    static std::jthread* GetEventThread(EventQueue* queue);
+    void EventLoop(std::stop_token stopToken);
+    static void Cleanup();
+
+private:
+#ifdef _WIN32
+    WSAData m_wsaData;
 #endif
+    SOCKET m_maxSocket = INVALID_SOCKET;
+    SOCKET m_topSocket = INVALID_SOCKET;
+    std::list<SOCKET> m_subscribers;
+
+    EventQueue* m_eventQueue;
+    int m_port;
+
+    struct timeval m_send_timeout;
+    struct timeval m_recv_timeout;
+    struct timeval m_select_timeout;
+
+    struct sockaddr_in address;
+    fd_set m_subscriberSet;
+
+    std::string m_lastSentFrame;
+
+    static NetworkHandler* m_instance;
+    static std::mutex m_instanceMutex;
+
+    NetworkHandler(EventQueue* queue);
+    ~NetworkHandler();
+
+    int sendMessage(SOCKET socket, const char* msg, ssize_t size);
+    void newConnection();
+    void checkDeadConnections();
+    void checkQueue();
+    void fdReset();
+};
+
+#endif // NETWORK_HANDLER_H
