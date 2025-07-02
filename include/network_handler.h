@@ -1,78 +1,80 @@
 #ifndef NETWORK_HANDLER_H
 #define NETWORK_HANDLER_H
 
-#include "event_queue.h"
-#include <string>
 #include <thread>
-#include <stop_token>
 #include <mutex>
+#include <string>
 #include <atomic>
+#include <stop_token>
 
 #ifdef _WIN32
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#define CLOSE_SOCKET closesocket
-#include <stddef.h>
-// 檢查是否已經定義了 ssize_t，如果沒有才定義
-#if !defined(_SSIZE_T_DEFINED) && !defined(_SSIZE_T_) && !defined(ssize_t)
-#define _SSIZE_T_DEFINED
-#define _SSIZE_T_
-typedef long long ssize_t;  // 使用 long long 來匹配 MinGW 的定義
-#endif
+  #include <winsock2.h>
+  #include <ws2tcpip.h>
+  #define CLOSE_SOCKET(s) closesocket(s)
+  #define INVALID_SOCKET_VALUE INVALID_SOCKET
 #else
-#include <unistd.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <fcntl.h>  // 添加這個頭文件用於設置非阻塞模式
-#include <errno.h>  // 添加這個頭文件用於錯誤處理
-#define INVALID_SOCKET -1
-#define SOCKET int
-#define CLOSE_SOCKET close
+  #include <unistd.h>
+  #include <netinet/in.h>
+  #include <sys/socket.h>
+  #include <arpa/inet.h>
+  #include <fcntl.h>
+  #include <errno.h>
+  #define CLOSE_SOCKET(s) close(s)
+  #define INVALID_SOCKET_VALUE -1
 #endif
 
-#define TIMEOUT_SEND_SEC 5
-#define PORT 3101
-#define BUFFER_SIZE 1024
-#define CLIENT_TIMEOUT_SEC 30
+#define PORT 25555
+#define BUFFER_SIZE 65535
+#define TIMEOUT_SEND_SEC 1
+#define CLIENT_TIMEOUT_SEC 10
+
+// --- forward declarations for external global access ---
+class TelemetryFrame;
+class AbstractTelemetrySerializer;
 
 class NetworkHandler {
 public:
-    static std::jthread* GetEventThread(EventQueue* queue);
-    void EventLoop(std::stop_token stopToken);
+    static std::jthread* GetEventThread();
     static void Cleanup();
 
+    ~NetworkHandler();
+
 private:
-#ifdef _WIN32
-    WSAData m_wsaData;
-#endif
-    SOCKET m_socket = INVALID_SOCKET;
-    EventQueue* m_eventQueue = nullptr;
-    int m_port;
-    struct timeval m_send_timeout;
-    struct timeval m_recv_timeout;
-    struct timeval m_select_timeout;
-    struct sockaddr_in m_serverAddr;
-    struct sockaddr_in m_clientAddr;
-    socklen_t m_clientAddrLen = sizeof(m_clientAddr);
-    
-    std::atomic<bool> m_hasClient{false};
-    std::atomic<time_t> m_lastClientActivity{0};
-    std::string m_lastSentFrame;
-    
     static NetworkHandler* m_instance;
     static std::mutex m_instanceMutex;
-    
-    NetworkHandler(EventQueue* queue);
-    ~NetworkHandler();
-    
-    int sendMessage(const char* msg, size_t size);
+
+    NetworkHandler(); // No EventQueue required anymore
+    void EventLoop(std::stop_token stopToken);
+
     void handleIncomingData();
+    void handleClientRequest(const std::string& request);
     void checkClientTimeout();
-    void checkQueue();
-    bool isClientValid();
     void resetClient();
+    bool isClientValid();
+
+    int sendMessage(const char* msg, size_t size);
+
+    #ifdef _WIN32
+        SOCKET m_socket = INVALID_SOCKET;
+    #else
+        int m_socket = -1;
+    #endif
+
+    int m_port;
+    bool m_hasClient;
+    time_t m_lastClientActivity;
+
+    struct sockaddr_in m_serverAddr{};
+    struct sockaddr_in m_clientAddr{};
+    socklen_t m_clientAddrLen{};
+
+    struct timeval m_send_timeout{};
+    struct timeval m_recv_timeout{};
+    struct timeval m_select_timeout{};
+
+#ifdef _WIN32
+    WSADATA m_wsaData{};
+#endif
 };
 
 #endif // NETWORK_HANDLER_H
