@@ -6,8 +6,12 @@
 
 #ifdef _WIN32
 #include <time.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
 #else
 #include <sys/time.h>
+#include <fcntl.h>
+#include <errno.h>
 #endif
 
 NetworkHandler* NetworkHandler::m_instance = nullptr;
@@ -31,13 +35,13 @@ NetworkHandler::NetworkHandler(EventQueue* eventQueue) {
     
     m_port = PORT;
 
-    // 設置超時時間
+    // 設置超時時間 - 優化：減少 select 超時時間以提高響應性
     m_send_timeout.tv_sec = TIMEOUT_SEND_SEC;
     m_send_timeout.tv_usec = 0;
-    m_recv_timeout.tv_sec = 1; // 1秒接收超時
-    m_recv_timeout.tv_usec = 0;
+    m_recv_timeout.tv_sec = 0; // 優化：減少接收超時，避免阻塞
+    m_recv_timeout.tv_usec = 100000; // 100ms
     m_select_timeout.tv_sec = 0;
-    m_select_timeout.tv_usec = 100000; // 100ms
+    m_select_timeout.tv_usec = 10000; // 優化：從100ms改為10ms，減少延遲
 
     // 配置服務器地址
     m_serverAddr.sin_family = AF_INET;
@@ -50,26 +54,36 @@ NetworkHandler::NetworkHandler(EventQueue* eventQueue) {
         throw std::runtime_error("Unable to create UDP socket!");
     }
 
-    // 設置socket選項
+    // 優化：設置socket為非阻塞模式
 #ifdef _WIN32
-    DWORD timeout = TIMEOUT_SEND_SEC * 1000; // Windows使用毫秒
-    if (setsockopt(m_socket, SOL_SOCKET, SO_SNDTIMEO, reinterpret_cast<char*>(&timeout), sizeof(timeout)) < 0) {
+    u_long mode = 1;
+    if (ioctlsocket(m_socket, FIONBIO, &mode) != 0) {
         CLOSE_SOCKET(m_socket);
-        throw std::runtime_error("Unable to set send timeout!");
-    }
-    timeout = 1000; // 1秒接收超時
-    if (setsockopt(m_socket, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<char*>(&timeout), sizeof(timeout)) < 0) {
-        CLOSE_SOCKET(m_socket);
-        throw std::runtime_error("Unable to set receive timeout!");
+        throw std::runtime_error("Unable to set non-blocking mode!");
     }
 #else
-    if (setsockopt(m_socket, SOL_SOCKET, SO_SNDTIMEO, &m_send_timeout, sizeof(m_send_timeout)) < 0) {
+    int flags = fcntl(m_socket, F_GETFL, 0);
+    if (flags == -1 || fcntl(m_socket, F_SETFL, flags | O_NONBLOCK) == -1) {
         CLOSE_SOCKET(m_socket);
-        throw std::runtime_error("Unable to set send timeout!");
+        throw std::runtime_error("Unable to set non-blocking mode!");
     }
-    if (setsockopt(m_socket, SOL_SOCKET, SO_RCVTIMEO, &m_recv_timeout, sizeof(m_recv_timeout)) < 0) {
-        CLOSE_SOCKET(m_socket);
-        throw std::runtime_error("Unable to set receive timeout!");
+#endif
+
+    // 優化：增加socket緩衝區大小
+    int bufferSize = 64 * 1024; // 64KB
+#ifdef _WIN32
+    if (setsockopt(m_socket, SOL_SOCKET, SO_SNDBUF, reinterpret_cast<char*>(&bufferSize), sizeof(bufferSize)) < 0) {
+        std::cerr << "Warning: Unable to set send buffer size" << std::endl;
+    }
+    if (setsockopt(m_socket, SOL_SOCKET, SO_RCVBUF, reinterpret_cast<char*>(&bufferSize), sizeof(bufferSize)) < 0) {
+        std::cerr << "Warning: Unable to set receive buffer size" << std::endl;
+    }
+#else
+    if (setsockopt(m_socket, SOL_SOCKET, SO_SNDBUF, &bufferSize, sizeof(bufferSize)) < 0) {
+        std::cerr << "Warning: Unable to set send buffer size" << std::endl;
+    }
+    if (setsockopt(m_socket, SOL_SOCKET, SO_RCVBUF, &bufferSize, sizeof(bufferSize)) < 0) {
+        std::cerr << "Warning: Unable to set receive buffer size" << std::endl;
     }
 #endif
 
@@ -102,9 +116,19 @@ int NetworkHandler::sendMessage(const char* msg, size_t size) {
                          reinterpret_cast<struct sockaddr*>(&m_clientAddr), m_clientAddrLen);
     
     if (sent < 0) {
-        // 發送失敗，可能客戶端已斷線
-        resetClient();
-        return -1;
+#ifdef _WIN32
+        int error = WSAGetLastError();
+        if (error != WSAEWOULDBLOCK) {
+            resetClient();
+            return -1;
+        }
+#else
+        if (errno != EAGAIN && errno != EWOULDBLOCK) {
+            resetClient();
+            return -1;
+        }
+#endif
+        return 0; // 暫時無法發送，但不視為錯誤
     }
     
     return 0;
@@ -115,10 +139,25 @@ void NetworkHandler::handleIncomingData() {
     struct sockaddr_in fromAddr;
     socklen_t fromAddrLen = sizeof(fromAddr);
     
-    ssize_t received = recvfrom(m_socket, buffer, BUFFER_SIZE - 1, 0, 
-                               reinterpret_cast<struct sockaddr*>(&fromAddr), &fromAddrLen);
-    
-    if (received > 0) {
+    // 優化：使用循環處理所有待接收的數據，避免積壓
+    while (true) {
+        ssize_t received = recvfrom(m_socket, buffer, BUFFER_SIZE - 1, 0, 
+                                   reinterpret_cast<struct sockaddr*>(&fromAddr), &fromAddrLen);
+        
+        if (received <= 0) {
+#ifdef _WIN32
+            int error = WSAGetLastError();
+            if (error == WSAEWOULDBLOCK) {
+                break; // 沒有更多數據
+            }
+#else
+            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+                break; // 沒有更多數據
+            }
+#endif
+            break;
+        }
+        
         buffer[received] = '\0';
         
         // 檢查是否是新客戶端或現有客戶端
@@ -137,10 +176,7 @@ void NetworkHandler::handleIncomingData() {
             isNewClient = false;
         } else {
             // 來自其他客戶端，拒絕（因為只允許一個客戶端）
-            std::cout << "Rejected connection from " 
-                      << inet_ntoa(fromAddr.sin_addr) << ":" << ntohs(fromAddr.sin_port) 
-                      << " (only one client allowed)" << std::endl;
-            return;
+            continue; // 跳過這個數據包
         }
         
         // 更新客戶端活動時間
@@ -150,9 +186,6 @@ void NetworkHandler::handleIncomingData() {
         if (isNewClient && !m_lastSentFrame.empty()) {
             sendMessage(m_lastSentFrame.c_str(), m_lastSentFrame.length() + 1);
         }
-        
-        // 處理接收到的消息（如果需要的話）
-        // 這裡可以根據需要處理客戶端發送的數據
     }
 }
 
@@ -167,7 +200,11 @@ void NetworkHandler::checkClientTimeout() {
 }
 
 void NetworkHandler::checkQueue() {
-    while (!m_eventQueue->IsEmpty()) {
+    // 優化：限制每次處理的事件數量，避免長時間阻塞
+    int processedCount = 0;
+    const int maxProcessPerCycle = 10;
+    
+    while (!m_eventQueue->IsEmpty() && processedCount < maxProcessPerCycle) {
         EventInfo poppedEvent = m_eventQueue->PopEvent();
         if (poppedEvent.type.empty()) break;
 
@@ -178,6 +215,7 @@ void NetworkHandler::checkQueue() {
             if (sendMessage(event, event_size) == -1) {
                 // 發送失敗，客戶端可能已斷線
                 resetClient();
+                break;
             }
         }
         
@@ -185,6 +223,8 @@ void NetworkHandler::checkQueue() {
         if (poppedEvent.type == EVENT_FRAME) {
             m_lastSentFrame = poppedEvent.event;
         }
+        
+        processedCount++;
     }
 }
 
@@ -207,24 +247,9 @@ void NetworkHandler::EventLoop(std::stop_token stopToken) {
     std::cout << "UDP NetworkHandler started on port " << m_port << std::endl;
 
     while (!stopToken.stop_requested()) {
-        // 使用select檢查是否有數據可讀
-        fd_set readSet;
-        FD_ZERO(&readSet);
-        FD_SET(m_socket, &readSet);
-
-#ifdef _WIN32
-        int result = select(0, &readSet, nullptr, nullptr, &m_select_timeout);
-#else
-        int result = select(m_socket + 1, &readSet, nullptr, nullptr, &m_select_timeout);
-#endif
-
-        if (result < 0) {
-            throw std::runtime_error("Error during select!");
-        }
-        
-        if (result > 0 && FD_ISSET(m_socket, &readSet)) {
-            handleIncomingData();
-        }
+        // 優化：直接檢查socket，不使用select
+        // 因為已經設置為非阻塞模式，直接調用更高效
+        handleIncomingData();
 
         auto now = steady_clock::now();
         
@@ -234,11 +259,14 @@ void NetworkHandler::EventLoop(std::stop_token stopToken) {
             lastTimeoutCheck = now;
         }
 
-        // 傳輸最小間隔 30 毫秒
-        if (duration_cast<milliseconds>(now - lastSend).count() >= 30) {
+        // 優化：減少傳輸間隔到10毫秒，但限制每次處理的事件數量
+        if (duration_cast<milliseconds>(now - lastSend).count() >= 10) {
             checkQueue();
             lastSend = now;
         }
+
+        // 優化：添加短暫休眠，避免100%CPU占用
+        std::this_thread::sleep_for(std::chrono::microseconds(1000)); // 1ms
     }
     
     std::cout << "UDP NetworkHandler stopped" << std::endl;

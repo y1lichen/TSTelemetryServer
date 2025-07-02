@@ -2,7 +2,6 @@
 #define NETWORK_HANDLER_H
 
 #include "event_queue.h"
-
 #include <string>
 #include <thread>
 #include <stop_token>
@@ -14,9 +13,11 @@
 #include <ws2tcpip.h>
 #define CLOSE_SOCKET closesocket
 #include <stddef.h>
-#ifndef _SSIZE_T_DEFINED
+// 檢查是否已經定義了 ssize_t，如果沒有才定義
+#if !defined(_SSIZE_T_DEFINED) && !defined(_SSIZE_T_) && !defined(ssize_t)
 #define _SSIZE_T_DEFINED
-typedef long ssize_t;
+#define _SSIZE_T_
+typedef long long ssize_t;  // 使用 long long 來匹配 MinGW 的定義
 #endif
 #else
 #include <unistd.h>
@@ -24,6 +25,8 @@ typedef long ssize_t;
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <fcntl.h>  // 添加這個頭文件用於設置非阻塞模式
+#include <errno.h>  // 添加這個頭文件用於錯誤處理
 #define INVALID_SOCKET -1
 #define SOCKET int
 #define CLOSE_SOCKET close
@@ -47,11 +50,9 @@ private:
     SOCKET m_socket = INVALID_SOCKET;
     EventQueue* m_eventQueue = nullptr;
     int m_port;
-
     struct timeval m_send_timeout;
     struct timeval m_recv_timeout;
     struct timeval m_select_timeout;
-
     struct sockaddr_in m_serverAddr;
     struct sockaddr_in m_clientAddr;
     socklen_t m_clientAddrLen = sizeof(m_clientAddr);
@@ -59,13 +60,13 @@ private:
     std::atomic<bool> m_hasClient{false};
     std::atomic<time_t> m_lastClientActivity{0};
     std::string m_lastSentFrame;
-
+    
     static NetworkHandler* m_instance;
     static std::mutex m_instanceMutex;
-
+    
     NetworkHandler(EventQueue* queue);
     ~NetworkHandler();
-
+    
     int sendMessage(const char* msg, size_t size);
     void handleIncomingData();
     void checkClientTimeout();
